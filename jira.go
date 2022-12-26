@@ -325,7 +325,7 @@ func (c *Client) doWithDeadline(req *http.Request, v interface{}) (*Response, er
 	errDeadlineWrapped := func(resp *Response, err error) error {
 		u := *req.URL
 		values := u.Query()
-		if values.Get("jwt") !=" {
+		if values.Get("jwt") != "" {
 			values.Set("jwt", "HIDDEN")
 			u.RawQuery = values.Encode()
 		}
