@@ -282,8 +282,9 @@ type Progress struct {
 
 // Parent represents the parent of a Jira issue, to be used with subtask issue types.
 type Parent struct {
-	ID  string `json:"id,omitempty" structs:"id"`
-	Key string `json:"key,omitempty" structs:"key"`
+	ID     string       `json:"id,omitempty" structs:"id"`
+	Key    string       `json:"key,omitempty" structs:"key"`
+	Fields *IssueFields `json:"fields,omitempty" structs:"fields,omitempty"`
 }
 
 // Time represents the Time definition of Jira as a time.Time of go
